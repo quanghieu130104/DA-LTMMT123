@@ -1,26 +1,65 @@
-@import "tailwindcss";
+/* app/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* --- 1. SỬA MÀU NỀN CHÍNH (CYBERPUNK) --- */
+    /* Màu tím than vũ trụ (giống trang Admin/Footer) */
+    --background: #030014; 
+    
+    /* Chữ màu xám sáng (dễ đọc trên nền tối) */
+    --foreground: #e2e8f0; 
+
+    /* --- 2. CÁC KHỐI NỘI DUNG (Card, Header...) --- */
+    /* Màu nền cho các thẻ card (nhạt hơn nền chính chút xíu) */
+    --card: #0a0a0a; 
+    --card-foreground: #e2e8f0;
+    
+    /* --- 3. MÀU NHẤN (PRIMARY) - Đổi từ Vàng sang Tím Neon --- */
+    --primary: #9333ea; /* Purple 600 */
+    --primary-foreground: #ffffff;
+    
+    /* --- 4. MÀU PHỤ (SECONDARY) - Đổi từ Xanh lá sang Hồng Neon --- */
+    --secondary: #db2777; /* Pink 600 */
+    --secondary-foreground: #ffffff;
+
+    /* --- 5. VIỀN & INPUT --- */
+    /* Màu viền tím nhạt mờ ảo */
+    --border: #2e1065; /* Deep Purple 900 */
+    --input: #1e1b4b;
+    
+    /* Trạng thái Hover */
+    --accent: #1e1b4b;
+    --accent-foreground: #e2e8f0;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* --- QUAN TRỌNG: ÁP DỤNG MÀU VÀO BODY --- */
+@layer base {
+  body {
+    /* Ép buộc toàn bộ trang web dùng màu nền Cyberpunk */
+    background-color: var(--background);
+    color: var(--foreground);
+    
+    /* Giúp chữ mượt hơn trên nền tối */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* (Tùy chọn) Thanh cuộn (Scrollbar) đẹp hơn cho Chrome/Edge */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #030014; 
+}
+::-webkit-scrollbar-thumb {
+  background: #4c1d95; /* Thanh cuộn màu tím */
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #7c3aed;
 }

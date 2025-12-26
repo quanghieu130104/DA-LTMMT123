@@ -1,0 +1,39 @@
+// prisma/schema.prisma
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model Post {
+  id          String   @id @default(cuid())
+  title       String
+  description String?
+  content     String?
+  date        DateTime @default(now())
+  category    String?
+}
+
+model Certificate {
+  id      String   @id @default(cuid())
+  title   String
+  issuer  String   // Nơi cấp (Cisco, AWS...)
+  date    String   // Năm cấp (Ví dụ: "2024")
+  image   String   // Đường dẫn ảnh (Ví dụ: "/aws.png")
+  proofImage String?
+  link    String?  // Link xác thực (Có thể để trống)
+  status  String?  // Trạng thái (Verified, Completed...)
+  createdAt DateTime @default(now())
+  
+}
+model Contact {
+  id        String   @id @default(uuid())
+  name      String
+  email     String
+  message   String
+  createdAt DateTime @default(now())
+}
