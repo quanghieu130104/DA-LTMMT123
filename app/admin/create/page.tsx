@@ -69,10 +69,10 @@ export default function CreatePostPage() {
                 >
                   <option value="Next.js">Next.js</option>
                   <option value="Flutter">Flutter</option>
-                  <option value=".NET">.NET</option>
-                  <option value="Review">Review</option>
+                  <option value="JavaScript">JavaScript</option>
+                  <option value="JavaFramework">JavaFramework</option>
                   <option value="Life">Life</option>
-                  <option value="Life">Java</option>
+                  <option value="java">Java</option>
                 </select>
              </div>
 
