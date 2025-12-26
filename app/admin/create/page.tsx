@@ -72,6 +72,7 @@ export default function CreatePostPage() {
                   <option value=".NET">.NET</option>
                   <option value="Review">Review</option>
                   <option value="Life">Life</option>
+                  <option value="Life">Java</option>
                 </select>
              </div>
 

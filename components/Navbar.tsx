@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Zap } from "lucide-react";
+import { Zap, Github } from "lucide-react"; // 1. Import thêm icon Github
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -12,7 +12,7 @@ export default function Navbar() {
     { name: "Trang chủ", href: "/" },
     { name: "Giới thiệu", href: "/about" },
     { name: "Chứng chỉ", href: "/certificates" },
-    { name: "Liên hệ", href: "/contact" }, // 👈 Đã thêm cái này
+    { name: "Liên hệ", href: "/contact" },
   ];
 
   return (
@@ -27,35 +27,52 @@ export default function Navbar() {
           <span>Hieu's Blog</span>
         </Link>
 
-        {/* MENU LINKS */}
-        <div className="hidden md:flex items-center gap-1">
-          {navItems.map((item) => {
-            const isActive = pathname === item.href;
-            
-            return (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={`relative px-4 py-2 rounded-full text-sm font-medium transition duration-300 ${
-                  isActive 
-                    ? "text-white bg-white/10 shadow-[0_0_10px_rgba(168,85,247,0.3)]" 
-                    : "text-neutral-400 hover:text-white hover:bg-white/5"
-                }`}
-              >
-                {item.name}
-                
-                {/* Dấu chấm phát sáng bên dưới link đang chọn */}
-                {isActive && (
-                  <span className="absolute bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 bg-purple-500 rounded-full shadow-[0_0_5px_#a855f7]"></span>
-                )}
-              </Link>
-            );
-          })}
+        {/* MENU LINKS & SOCIAL */}
+        <div className="hidden md:flex items-center gap-6"> {/* Tăng gap để thoáng hơn */}
+          <div className="flex items-center gap-1">
+            {navItems.map((item) => {
+              const isActive = pathname === item.href;
+              
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={`relative px-4 py-2 rounded-full text-sm font-medium transition duration-300 ${
+                    isActive 
+                      ? "text-white bg-white/10 shadow-[0_0_10px_rgba(168,85,247,0.3)]" 
+                      : "text-neutral-400 hover:text-white hover:bg-white/5"
+                  }`}
+                >
+                  {item.name}
+                  
+                  {isActive && (
+                    <span className="absolute bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 bg-purple-500 rounded-full shadow-[0_0_5px_#a855f7]"></span>
+                  )}
+                </Link>
+              );
+            })}
+          </div>
+
+          {/* CHỖ MỚI THÊM: Nút GitHub */}
+          <div className="h-6 w-[1px] bg-white/10 mx-2"></div> {/* Thanh gạch dọc phân cách */}
+          
+          <Link
+            href="https://github.com/quanghieu130104" // 2. Link GitHub của bạn
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 text-neutral-400 hover:text-white transition duration-300 group"
+          >
+            <Github size={20} className="group-hover:scale-110 transition-transform" />
+            <span className="text-sm font-medium">GitHub</span>
+          </Link>
         </div>
 
-        {/* NÚT MOBILE MENU (NẾU CẦN) - Đơn giản hóa cho desktop trước */}
-        <div className="md:hidden">
-            {/* Bạn có thể thêm nút Hamburger menu ở đây sau */}
+        {/* NÚT MOBILE MENU */}
+        <div className="md:hidden flex items-center gap-4">
+            {/* Thêm icon Github cho mobile để người dùng dễ thấy */}
+            <Link href="https://github.com/quanghieu130104" target="_blank">
+                <Github size={20} className="text-neutral-400" />
+            </Link>
         </div>
 
       </div>
