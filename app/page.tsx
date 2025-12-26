@@ -104,6 +104,7 @@ export default async function Home({ searchParams }: Props) {
                     <Link 
                         key={c}
                         href={`/?cat=${c}`}
+                        scroll={false}
                         className={`px-5 py-2 rounded-full text-sm font-bold transition border backdrop-blur-md ${
                             cat === c 
                             ? "bg-purple-600/20 text-purple-300 border-purple-500 shadow-[0_0_15px_rgba(147,51,234,0.4)]" 
