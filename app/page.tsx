@@ -23,7 +23,7 @@ export default async function Home({ searchParams }: Props) {
   });
 
   // Danh sách Category (Cập nhật thêm Java, Network cho khớp với Admin)
-  const categories = ["Next.js", "Flutter", ".NET", "Review", "Life", "Java", "Network"];
+  const categories = ["Next.js", "Flutter", "JavaScript", "JavaFramework", "Life", "Java", "Network"];
 
   return (
     // --- 1. NỀN CHÍNH (Deep Space Black + Blobs) ---
