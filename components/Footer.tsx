@@ -43,6 +43,7 @@ export default function Footer() {
               <li><Link href="/blog" className="hover:text-purple-400 transition duration-300">Blog</Link></li>
               <li><Link href="/certificates" className="hover:text-purple-400 transition duration-300">Chứng chỉ</Link></li>
               <li><Link href="/about" className="hover:text-purple-400 transition duration-300">Giới thiệu</Link></li>
+              <li><Link href="/contact" className="hover:text-purple-400 transition duration-300">Liên hệ</Link></li>
             </ul>
           </div>
 
