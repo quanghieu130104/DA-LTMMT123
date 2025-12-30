@@ -16,7 +16,7 @@ export default function AboutPage() {
             <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-500"></div>
             <div className="relative w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-white/10 bg-neutral-900">
                <Image 
-                 src="/avatar.jpg" 
+                 src="/avatar.png" 
                  alt="Avatar" 
                  fill 
                  className="object-cover"

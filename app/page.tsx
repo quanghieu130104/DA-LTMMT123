@@ -69,7 +69,7 @@ export default async function Home({ searchParams }: Props) {
             <div className="absolute inset-0 bg-gradient-to-tr from-purple-600 via-pink-600 to-orange-600 rounded-full blur-[80px] opacity-30 animate-pulse"></div>
             {/* Khung ảnh Avatar kiểu Neon Glass */}
             <div className="relative w-80 h-96 lg:w-96 lg:h-[500px] border-2 border-white/10 bg-white/5 backdrop-blur-xl rounded-[2.5rem] overflow-hidden shadow-[0_0_40px_-10px_rgba(168,85,247,0.3)] rotate-3 hover:rotate-0 transition duration-500 group">
-               <Image src="/avatar.jpg" alt="Avatar" fill className="object-cover group-hover:scale-110 transition duration-700" priority />
+               <Image src="/avatar.png" alt="Avatar" fill className="object-cover group-hover:scale-110 transition duration-700" priority />
             </div>
           </div>
         </div>
