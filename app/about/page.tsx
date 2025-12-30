@@ -43,6 +43,13 @@ export default function AboutPage() {
               <a href="https://www.facebook.com/ccthui123.kmm" target="_blank" className="px-6 py-2 rounded-full bg-blue-600/20 hover:bg-blue-600/40 border border-blue-500/50 text-blue-400 font-medium transition backdrop-blur-sm">
                 Facebook
               </a>
+              <a 
+    href="/Cv-hutech.pdf" 
+    target="_blank" 
+    className="px-6 py-2 rounded-full bg-orange-600/20 hover:bg-orange-600/40 border border-orange-500/50 text-orange-400 font-bold transition backdrop-blur-sm shadow-[0_0_15px_rgba(249,115,22,0.2)]"
+  >
+    Xem CV 📄
+  </a>
             </div>
           </div>
         </div>
